@@ -66,3 +66,13 @@ Database Query Processing – Optimizing queries by rewriting query graphs.
 AI & Neural Networks – Structuring and evolving neural networks using graph transformations.
 Computer Graphics & Layout Algorithms – Modifying graphical representations dynamically.
 ng rewrite rules, similar to formal language grammars.
+ step 1 
+git clone https://github.com/trueagi-io/Metta.git
+cd Metta
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source $HOME/.cargo/env
+rustc --version
+cargo build --release
+step 2
+git clone https://github.com/yohannes4321/Metta-Training-exercise.git
+cd Metta-Training-exercise
