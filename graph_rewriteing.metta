@@ -21,3 +21,18 @@
 ! (remove-atom &self (Atom to remove)) ; ()
 ! (match &self (Atom to remove) "Unexpected") ; nothing
 ! (remove-atom &self (Atom to remove)) ; ()
+ ;graph rewriting
+(link A B)
+(link B C)
+(link C A)
+(link C E)
+
+! (match &self (, (link $x $y)
+        (link $y $z)
+        (link $z $x))
+    (let () (remove-atom &self (link $x $y))
+        (add-atom &self (link $y $x)))
+) ; [(), (), ()]
+! (match &self (link $x $y)
+    (link $x $y)) ; [(link A C), (link C B), (link B A), (link C E)]
+ ; directed grpah to undirected grpah
